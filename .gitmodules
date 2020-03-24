@@ -1,3 +1,6 @@
 [submodule "spc-notify"]
 	path = spc-notify
 	url = https://github.com/BohdanPetryshyn/spc-notify.git
+[submodule "spc-client"]
+	path = spc-client
+	url = https://github.com/BohdanPetryshyn/spc-client.git
