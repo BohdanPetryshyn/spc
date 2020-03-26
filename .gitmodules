@@ -4,3 +4,6 @@
 [submodule "spc-client"]
 	path = spc-client
 	url = https://github.com/BohdanPetryshyn/spc-client.git
+[submodule "spc-persist"]
+	path = spc-persist
+	url = https://github.com/BohdanPetryshyn/spc-persist.git
