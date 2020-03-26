@@ -1,0 +1,17 @@
+version '3'
+
+services:
+  spc-notify:
+    build: spc-notify
+    restart: unless-stopped
+    environment:
+      - AMQP_URL=
+      - PORT=3000
+    expose:
+      - "3000"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - app-network
+    depends_on:
+      - redis
