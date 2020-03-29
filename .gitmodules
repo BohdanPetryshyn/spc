@@ -7,3 +7,6 @@
 [submodule "spc-persist"]
 	path = spc-persist
 	url = https://github.com/BohdanPetryshyn/spc-persist.git
+[submodule "spc-amqp-client"]
+	path = spc-amqp-client
+	url = https://github.com/BohdanPetryshyn/spc-amqp-client.git
