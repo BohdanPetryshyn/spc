@@ -1,17 +1,32 @@
-version '3'
+version: '3'
 
 services:
   spc-notify:
     build: spc-notify
     restart: unless-stopped
     environment:
-      - AMQP_URL=
+      - AMQP_HOST=rabbit
       - PORT=3000
-    expose:
-      - "3000"
+    ports:
+      - 3000:3000
     volumes:
-      - .:/usr/src/app
+      - ./spc-notify:/usr/src/app
     networks:
-      - app-network
+      - spc-app-network
     depends_on:
-      - redis
+      - rabbit
+
+  rabbit:
+    image: rabbitmq
+    container_name: spc-rabbit
+    volumes:
+      - spc_rabbitmq_data:/data
+    networks:
+      - spc-app-network
+
+networks:
+  spc-app-network:
+    driver: bridge
+
+volumes:
+  spc_rabbitmq_data:
